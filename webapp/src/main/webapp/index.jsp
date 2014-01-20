@@ -11,15 +11,20 @@
 
 </head>
 <body>
-	<div class="container-fluid" style="background-color: #E5EFFC;">
+	<div class="container-fluid" style="background-color: #6C8CD5;">
 		<div class="row-fluid">
 			<div class="span4">
-				<img alt="" src="<c:url value="/resources/img/CBlogoNew.jpg" />">
+			<div style="width:243px; height: 50px; min-height: 20px; left: 50%; top: 50%; padding:0px;
+												position: relative; margin-left: -122px; margin-top: 5px;
+												margin-bottom:1px;font-family:Rage Italic;font-size:48px;
+                                    			background-color: #6C8CD5;">
+                                    <img src="<c:url value="/resources/img/cooltext.png" />"></div>
 			</div>
-			<div class="span8" style="margin-top: 10px">
+			
+			<div class="span8" style="margin-top: 5px;">
 				<button class="btn btn-primary btn-block" data-toggle="modal"
 					data-target="#myModal">Вход</button>
-				<button class="btn btn-info btn-block">Регистрация</button>
+				<button class="btn btn-info btn-block"  style="margin-bottom:5px">Регистрация</button>
 			</div>
 		</div>
 	</div>
