@@ -7,12 +7,12 @@ $(document).ready(
 					{
 						rules : {
 							
-							password : {
+							passwordLogin : {
 								required : true,
 								minlength : 5
 							},
 							
-							email : {
+							emailLogin : {
 								required : true,
 								email : true,
 							},

@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
 	isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
@@ -63,15 +65,15 @@
 		<div class="modal-body">
 			<form id="loginForm" class="form-horizontal" action="/user/login" method="get">
 				<div class="control-group">
-					<label class="control-label" for="email" style="padding-top:0px">Email</label>
+					<label class="control-label" for="emailLogin" style="padding-top:0px">Email</label>
 					<div class="controls">
-						<input type="text" id="email" name="email" placeholder="Email">
+						<input type="text" id="emailLogin" name="emailLogin" placeholder="Email">
 					</div>
 				</div>
 				<div class="control-group" style="margin-bottom:10px">
-					<label class="control-label" for="password"  style="padding-top:0px">Пароль</label>
+					<label class="control-label" for="passwordLogin"  style="padding-top:0px">Пароль</label>
 					<div class="controls">
-						<input type="password" id="password" name="password" placeholder="Пароль">
+						<input type="password" id="passwordLogin" name="passwordLogin" placeholder="Пароль">
 					</div>
 				</div>
 				<div class="control-group">
@@ -94,7 +96,7 @@
 			<h3 id="registerModalLabel">Введите данные аккаунта</h3>
 		</div>
 		<div class="modal-body">
-			<form id="registerForm" class="form-horizontal"  action="/user/register" method="post">
+			<form:form modelAttribute="user" id="registerForm" class="form-horizontal"  action="user/register" method="POST">
 				<div class="control-group">
 					<label class="control-label" for="name" style="padding-top:0px">Ваше имя</label>
 					<div class="controls">
@@ -117,14 +119,14 @@
 				<div class="control-group" style="margin-bottom:10px">
 					<label class="control-label" for="checkPassword"  style="padding-top:0px">Пароль для проверки</label>
 					<div class="controls">
-						<input type="password" id="checkPassword" name="checkPassword" placeholder="Введите пароль повторно">
+						<input type="password" id="checkPassword" placeholder="Введите пароль повторно">
 					</div>
 				</div>
 				<div class="control-group">					
 						<button type="submit" class="btn">Зарегистрироваться</button>
 					</div>
 				</div>
-			</form>
+			</form:form>
 		</div>		
 	</div>
 	

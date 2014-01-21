@@ -23,8 +23,6 @@ public class User {
 	
 	@Column(name="password")
 	private String password;
-	
-	private String checkPassword;
 
 	public long getId() {
 		return id;
@@ -58,12 +56,23 @@ public class User {
 		this.password = password;
 	}
 
-	public String getCheckPassword() {
-		return checkPassword;
+	public User(String name, String email, String password) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.password = password;
 	}
 
-	public void setCheckPassword(String checkPassword) {
-		this.checkPassword = checkPassword;
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Имя: " + name + " email: " + email + " Пароль: " + password;
+	}
+
 
 }
