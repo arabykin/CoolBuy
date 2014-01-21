@@ -11,33 +11,46 @@
 
 </head>
 <body>
-	<div class="container-fluid" style="background-color: #6C8CD5;">
+	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span4">
 			<div style="width:243px; height: 50px; min-height: 20px; left: 50%; top: 50%; padding:0px;
 												position: relative; margin-left: -122px; margin-top: 5px;
 												margin-bottom:1px;font-family:Rage Italic;font-size:48px;
-                                    			background-color: #6C8CD5;">
+                                    			">
                                     <img src="<c:url value="/resources/img/cooltext.png" />"></div>
 			</div>
 			
 			<div class="span8" style="margin-top: 5px;">
 				<button class="btn btn-primary btn-block" data-toggle="modal"
-					data-target="#myModal">Вход</button>
-				<button class="btn btn-info btn-block"  style="margin-bottom:5px">Регистрация</button>
+					data-target="#loginModal">Вход</button>
+				<button class="btn btn-success btn-block" data-toggle="modal"
+					data-target="#registerModal"  style="margin-bottom:5px">Регистрация</button>
 			</div>
 		</div>
 	</div>
-	<div class="container" style="background-color: #E5EFFC;"></div>
+	<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"> <img src="<c:url value="/resources/img/carousel/1.jpg" />"></div>
+    <div class="item"><img src="<c:url value="/resources/img/carousel/2.jpg" />"></div>
+    <div class="item"><img src="<c:url value="/resources/img/carousel/3.jpg" />"></div>
+ 	<div class="item"><img src="<c:url value="/resources/img/carousel/4.jpg" />"></div> 
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+	
 
-	<a href="welcome.html">LINK</a>
-	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true"
+	
+	<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog"
+		aria-labelledby="loginModalLabel" aria-hidden="true"
 		style="display: none;">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"
 				aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Введите данные аккаунта</h3>
+			<h3 id="loginModalLabel">Введите данные аккаунта</h3>
 		</div>
 		<div class="modal-body">
 			<form class="form-horizontal">
@@ -64,5 +77,50 @@
 			</form>
 		</div>		
 	</div>
+	<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog"
+		aria-labelledby="registerModalLabel" aria-hidden="true"
+		style="display: none;">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h3 id="registerModalLabel">Введите данные аккаунта</h3>
+		</div>
+		<div class="modal-body">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="inputName" style="padding-top:0px">Ваше имя</label>
+					<div class="controls">
+						<input type="text" id="inputName" placeholder="Введите имя">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail" style="padding-top:0px">Email</label>
+					<div class="controls">
+						<input type="text" id="inputEmail" placeholder="Введите E-mail">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword"  style="padding-top:0px">Пароль</label>
+					<div class="controls">
+						<input type="password" id="inputPassword" placeholder="Введите пароль">
+					</div>
+				</div>
+				<div class="control-group" style="margin-bottom:10px">
+					<label class="control-label" for="checkPassword"  style="padding-top:0px">Пароль для проверки</label>
+					<div class="controls">
+						<input type="password" id="checkPassword" placeholder="Введите пароль повторно">
+					</div>
+				</div>
+				<div class="control-group">					
+						<button type="submit" class="btn">Зарегистрироваться</button>
+					</div>
+				</div>
+			</form>
+		</div>		
+	</div>
+	
+	
+	
+	<footer><a href="welcome.html" style="color:white">LINK</a></footer>
 </body>
 </html>
