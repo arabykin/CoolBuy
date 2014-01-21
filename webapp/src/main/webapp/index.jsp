@@ -5,8 +5,16 @@
 <head>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet">
+	<link href="<c:url value="/resources/css/bootstrap-responsive.min.css" />"
+	rel="stylesheet">
+	<link href="<c:url value="/resources/css/validate.css" />"
+	rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-2.0.3.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="/resources/js/validateRegister.js" />"></script>
+<script src="<c:url value="/resources/js/validateLogin.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+
 <title>Добро пожаловать</title>
 
 </head>
@@ -53,17 +61,17 @@
 			<h3 id="loginModalLabel">Введите данные аккаунта</h3>
 		</div>
 		<div class="modal-body">
-			<form class="form-horizontal">
+			<form id="loginForm" class="form-horizontal" action="/user/login" method="get">
 				<div class="control-group">
-					<label class="control-label" for="inputEmail" style="padding-top:0px">Email</label>
+					<label class="control-label" for="email" style="padding-top:0px">Email</label>
 					<div class="controls">
-						<input type="text" id="inputEmail" placeholder="Email">
+						<input type="text" id="email" name="email" placeholder="Email">
 					</div>
 				</div>
 				<div class="control-group" style="margin-bottom:10px">
-					<label class="control-label" for="inputPassword"  style="padding-top:0px">Пароль</label>
+					<label class="control-label" for="password"  style="padding-top:0px">Пароль</label>
 					<div class="controls">
-						<input type="password" id="inputPassword" placeholder="Пароль">
+						<input type="password" id="password" name="password" placeholder="Пароль">
 					</div>
 				</div>
 				<div class="control-group">
@@ -86,29 +94,30 @@
 			<h3 id="registerModalLabel">Введите данные аккаунта</h3>
 		</div>
 		<div class="modal-body">
-			<form class="form-horizontal">
+			<form id="registerForm" class="form-horizontal"  action="/user/register" method="post">
 				<div class="control-group">
-					<label class="control-label" for="inputName" style="padding-top:0px">Ваше имя</label>
+					<label class="control-label" for="name" style="padding-top:0px">Ваше имя</label>
 					<div class="controls">
-						<input type="text" id="inputName" placeholder="Введите имя">
+						<input type="text" id="name" name="name" placeholder="Введите имя">
+						
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="inputEmail" style="padding-top:0px">Email</label>
+					<label class="control-label" for="email" style="padding-top:0px">Email</label>
 					<div class="controls">
-						<input type="text" id="inputEmail" placeholder="Введите E-mail">
+						<input type="text" id="email" name="email" placeholder="Введите E-mail">
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="inputPassword"  style="padding-top:0px">Пароль</label>
+					<label class="control-label" for="password"  style="padding-top:0px">Пароль</label>
 					<div class="controls">
-						<input type="password" id="inputPassword" placeholder="Введите пароль">
+						<input type="password" id="password" name="password" placeholder="Введите пароль">
 					</div>
 				</div>
 				<div class="control-group" style="margin-bottom:10px">
 					<label class="control-label" for="checkPassword"  style="padding-top:0px">Пароль для проверки</label>
 					<div class="controls">
-						<input type="password" id="checkPassword" placeholder="Введите пароль повторно">
+						<input type="password" id="checkPassword" name="checkPassword" placeholder="Введите пароль повторно">
 					</div>
 				</div>
 				<div class="control-group">					
