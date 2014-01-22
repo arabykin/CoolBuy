@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import by.coolbuy.dao.UserDAO;
-import by.coolbuy.models.User;
+import by.coolbuy.persistence.dao.UserDAO;
+import by.coolbuy.persistence.model.User;
 
 /**
  * Контроллер для главной страницы приложения.

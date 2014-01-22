@@ -1,4 +1,4 @@
-package by.coolbuy.models;
+package by.coolbuy.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

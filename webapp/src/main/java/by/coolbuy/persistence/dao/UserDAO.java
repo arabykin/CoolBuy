@@ -1,4 +1,4 @@
-package by.coolbuy.dao;
+package by.coolbuy.persistence.dao;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import by.coolbuy.models.User;
+import by.coolbuy.persistence.model.User;
 
 @Repository
 @SuppressWarnings({ "unchecked", "rawtypes" })
