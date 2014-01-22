@@ -1,22 +1,23 @@
-package by.coolbuy.persistence.dao;
-
+package by.coolbuy.trash;
+//from dao
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.apache.log4j.Logger;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
-import by.coolbuy.persistence.model.User;
 
 @Repository
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class UserDAO {
 
 	@Autowired
+	//@Resource(name="mySessionFactory")
 	private SessionFactory sessionFactory;
 
 	protected static Logger logger = Logger.getLogger("dao");
@@ -30,8 +31,7 @@ public class UserDAO {
 	public List<User> findAll() {
 		logger.debug("get all users");
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from User");
-		List users = query.list();
+		List users = session.createQuery("from User").list();
 		return users;
 	}
 

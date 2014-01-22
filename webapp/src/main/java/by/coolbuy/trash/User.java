@@ -1,5 +1,5 @@
-package by.coolbuy.persistence.model;
-
+package by.coolbuy.trash;
+//from model
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
 	@Id
@@ -71,7 +71,7 @@ public class User {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Имя: " + name + " email: " + email + " Пароль: " + password;
+		return "Name: " + name + " email: " + email + " Password: " + password;
 	}
 
 

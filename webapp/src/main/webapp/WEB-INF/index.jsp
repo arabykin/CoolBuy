@@ -96,7 +96,7 @@
 			<h3 id="registerModalLabel">Введите данные аккаунта</h3>
 		</div>
 		<div class="modal-body">
-			<form:form modelAttribute="user" id="registerForm" class="form-horizontal"  action="user/register" method="POST">
+			<form id="registerForm" class="form-horizontal"  action="register" method="POST">
 				<div class="control-group">
 					<label class="control-label" for="name" style="padding-top:0px">Ваше имя</label>
 					<div class="controls">
@@ -126,7 +126,7 @@
 						<button type="submit" class="btn">Зарегистрироваться</button>
 					</div>
 				</div>
-			</form:form>
+			</form>
 		</div>		
 	</div>
 	
