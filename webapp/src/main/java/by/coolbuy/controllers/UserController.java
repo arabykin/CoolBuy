@@ -19,7 +19,7 @@ public class UserController {
 	@RequestMapping(value="/", method= RequestMethod.GET)
 	public String index(Model ui)
 	{
-		ui.addAttribute("user", new User());
+		//ui.addAttribute("user", new User());
 
 		return "index";
 	}
