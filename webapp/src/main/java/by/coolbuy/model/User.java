@@ -1,4 +1,4 @@
-package by.coolbuy.trash;
+package by.coolbuy.model;
 //from model
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,10 +12,10 @@ public class User {
 
 	@Id
 	@GeneratedValue
-	@Column(name="id")
-	private long id;
+	@Column(name="user_id")
+	private long userId;
 	
-	@Column(name="name")
+	@Column(name="user_name")
 	private String name;
 	
 	@Column(name="email")
@@ -23,13 +23,16 @@ public class User {
 	
 	@Column(name="password")
 	private String password;
+	
+	@Column(name="is_admin")
+	private Boolean isAdmin;
 
-	public long getId() {
-		return id;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setUserId(long id) {
+		this.userId = id;
 	}
 
 	public String getName() {
@@ -56,11 +59,23 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String name, String email, String password) {
+	
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public User(long userId, String name, String email, String password,
+			Boolean isAdmin) {
 		super();
+		this.userId = userId;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.isAdmin = isAdmin;
 	}
 
 	public User() {
@@ -71,7 +86,7 @@ public class User {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Name: " + name + " email: " + email + " Password: " + password;
+		return "Id: " + userId + "Name: " + name + " email: " + email + " Password: " + password + "is Admin" + isAdmin;
 	}
 
 

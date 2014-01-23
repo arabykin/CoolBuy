@@ -1,8 +1,11 @@
-package by.coolbuy.trash;
+package by.coolbuy.service;
 
 import java.util.List;
 
-public interface UserDAO {
+import by.coolbuy.model.User;
+
+public interface UserService {
+	
 	
 	void createUser(User user);
 

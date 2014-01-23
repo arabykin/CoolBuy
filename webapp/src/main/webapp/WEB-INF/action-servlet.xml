@@ -12,12 +12,12 @@
 
   <!-- Map simple view name such as "test" into /WEB-INF/views/test.jsp -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/" />
+    <property name="prefix" value="/WEB-INF/jsp/" />
     <property name="suffix" value=".jsp" />
   </bean>
   
   <!-- Scan classpath for annotations (eg: @Service, @Repository etc) -->
-  <context:component-scan base-package="by.coolbuy.trash"/>
+  <context:component-scan base-package="by.coolbuy"/>
   
   <!-- JDBC Data Source. It is assumed you have MySQL running on localhost port 3306 with 
        username root and blank password. Change below if it's not the case -->
@@ -35,7 +35,7 @@
     <property name="dataSource" ref="myDataSource"/>
     <property name="packagesToScan">
       <array>
-        <value>by.coolbuy.trash</value>
+        <value>by.coolbuy.model</value>
       </array>
     </property>
     <property name="hibernateProperties">
