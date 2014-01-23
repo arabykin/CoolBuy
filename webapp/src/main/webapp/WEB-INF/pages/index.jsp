@@ -34,8 +34,7 @@
 			<div class="span8" style="margin-top: 5px;">
 				<button class="btn btn-primary btn-block" data-toggle="modal"
 					data-target="#loginModal">Вход</button>
-				<button class="btn btn-success btn-block" data-toggle="modal"
-					data-target="#registerModal"  style="margin-bottom:5px">Регистрация</button>
+				<a class="btn btn-success btn-block" href="register.html"  style="margin-bottom:5px">Регистрация</a>
 			</div>
 		</div>
 	</div>
