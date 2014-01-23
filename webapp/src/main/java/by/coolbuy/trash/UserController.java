@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class UserController {
 	
-	@Autowired private UserDAO userDAO;
+	@Autowired private UserDAOImpl userDAO;
 	
 	@RequestMapping(value="/", method= RequestMethod.GET)
 	public String index(Model ui)

@@ -1,47 +1,55 @@
 package by.coolbuy.trash;
-
+//from dao
 import java.util.List;
 
-import org.hibernate.Criteria;
-import org.hibernate.Query;
+import org.apache.log4j.Logger;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-@Service
-public class UserDAOImpl implements IUserDAO {
+@Repository
+@SuppressWarnings({ "unchecked", "rawtypes" })
+public class UserDAOImpl {
 
-  @Autowired
-  private SessionFactory sessionFactory;
-  
-  @Override
-  public void insertUser(User user) {
-    sessionFactory.getCurrentSession().save(user);
-  }
+	@Autowired
+	//@Resource(name="mySessionFactory")
+	private SessionFactory sessionFactory;
 
-  @Override
-  public User getUserById(int userId) {
-    return (User) sessionFactory.
-      getCurrentSession().
-      get(User.class, userId);
-  }
-  
-  @Override
-  public User getUser(String username) {
-    Query query = sessionFactory.
-      getCurrentSession().
-      createQuery("from User where username = :username");
-    query.setParameter("username", username);
-    return (User) query.list().get(0);
-  }
-  
-  @Override
-  @SuppressWarnings("unchecked")
-  public List<User> getUsers() {
-    Criteria criteria = sessionFactory.
-      getCurrentSession().
-      createCriteria(User.class);
-    return criteria.list();
-  }
+	protected static Logger logger = Logger.getLogger("dao");
+
+	/**
+	 * @Transactional annotation below will trigger Spring Hibernate transaction
+	 *                manager to automatically create a hibernate session. See
+	 *                src/main/webapp/WEB-INF/action-servlet.xml
+	 */
+	@Transactional
+	public List<User> findAll() {
+		logger.debug("get all users");
+		Session session = sessionFactory.getCurrentSession();
+		List users = session.createQuery("from User").list();
+		return users;
+	}
+
+	@Transactional
+	public User find(String email) {
+		logger.debug("find one user");
+		Session session = sessionFactory.getCurrentSession();
+		User user = (User) session.get(User.class, email);
+		return user;
+	}
+
+	@Transactional
+	public void add(User user) {
+		logger.debug("Adding new user");
+
+		// Retrieve session from Hibernate
+		Session session = sessionFactory.getCurrentSession();
+
+		// Save
+		session.save(user);
+		
+	}
 
 }
